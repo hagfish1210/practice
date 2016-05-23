@@ -1,0 +1,40 @@
+<div>
+  <h2 style="color: skyblue">{{ greeting }}</h2>
+  <my-note foo="note"></my-note>
+
+  <ul>
+    <li>
+      <h2>no.1</h2>
+    </li>
+    <li>
+      <h2>no.2</h2>
+    </li>
+    <li>
+      <h2>no.3</h2>
+    </li>
+  </ul>
+
+  <div style="padding: 32px">
+
+    <form name="projectForm">
+      <md-input-container class="md-block">
+        <label>Description</label>
+        <input md-maxlength="30" required md-no-asterisk name="description" ng-model="description">
+        <div ng-messages="projectForm.description.$error">
+          <!-- <div ng-message="required">This is required.</div> -->
+          <!-- <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div> -->
+        </div>
+      </md-input-container>
+    </form>
+
+    <form class="discover-input-no-margin discover-input-reason" ng-submit="findVideo(videoId)">
+      <md-input-container class="md-block">
+        <label>VideoId</label>
+        <input ng-model="videoId">
+      </md-input-container>
+    </form>
+
+    <div id="player"></div>
+  </div>
+
+</div>
