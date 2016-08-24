@@ -10,6 +10,12 @@ angular.module('myApp', [
     controller: 'HomeCtrl'
   });
 })
+.config(function ($routeProvider) {
+  $routeProvider.when('/sidenav', {
+    templateUrl: '/components/sidenav.html',
+    controller: 'SidenavCtrl'
+  });
+})
 // .directive('myNote', function () {
 //   return {
 //     restrict: 'E',

@@ -1,6 +1,9 @@
-<div>
+<div ng-controller="HomeCtrl as ctrl">
   <h2 style="color: skyblue">{{ greeting }}</h2>
-  <my-note foo="note"></my-note>
+
+  <!-- <my-note foo="note"></my-note> -->
+  <my-dialog switch="switch"></my-dialog>
+  <input type="button" value="swtich" ng-click="switch = !switch">
 
   <h1>add h1 tag</h1>
 
@@ -15,6 +18,26 @@
       <h2>no.3</h2>
     </li>
   </ul>
+
+
+
+
+  <div>
+    <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+      Toggle right
+    </md-button>
+  </div>
+  <div>
+    <md-button ng-click="toggleLeft()" ng-hide="isOpenLeft()" class="md-primary">
+      Toggle left
+    </md-button>
+  </div>
+  <div>
+    <md-button ng-click="ctrl.showDialog($event)" class="md-primary">
+      Show Panel
+    </md-button>
+  </div>
+
 
   <div style="padding: 32px">
 
@@ -37,6 +60,45 @@
     </form>
 
     <div id="player"></div>
+
+    <div>
+      <img style="max-width: 300px" src="http://www.helloasia.com.au/wp-content/uploads/2016/04/4_1_20160418_12PM_TEASER1.jpg" alt="">
+    </div>
   </div>
 
-</div>
+
+
+
+  <md-sidenav style="height: 100%; z-index: 1000" class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Sidenav Right</h1>
+    </md-toolbar>
+    <md-content ng-controller="RightCtrl" layout-padding="">
+      <form>
+        <md-input-container>
+          <label for="testInput">Test input</label>
+          <input type="text" id="testInput" ng-model="data" md-autofocus="">
+        </md-input-container>
+      </form>
+      <md-button ng-click="close()" class="md-primary">
+        Close Sidenav Right
+      </md-button>
+    </md-content>
+  </md-sidenav>
+
+  <md-sidenav style="height: 100%" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Sidenav Right</h1>
+    </md-toolbar>
+    <md-content ng-controller="RightCtrl" layout-padding="">
+      <form>
+        <md-input-container>
+          <label for="testInput">Test input</label>
+          <input type="text" id="testInput" ng-model="data" md-autofocus="">
+        </md-input-container>
+      </form>
+      <md-button ng-click="close()" class="md-primary">
+        Close Sidenav Right
+      </md-button>
+    </md-content>
+  </md-sidenav>

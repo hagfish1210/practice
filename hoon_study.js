@@ -104,5 +104,14 @@ bower install ng-showdown #~1.1.0
 // web server 와 app server ?
 
 // 2016. 05. 23
+GIT REPOSITORY로 프로젝트 관리하기 (ssh연결을 통해)
+step1). ssh key 생성 (terminal: ssh-keygen)
+
+step2). github 계정정보에 ssh key등록 (id_rsa-pub을 복사, 붙여넣기)
+
+step3). 해당 프로젝트 폴더로 이동, git init > git remote add origin 내 리파지토리의 ssh주소 > git push -u origin master
+예상 에러 : origin branch가 이미 있다고하면? > git remote rm origin으로 삭제한 후, 다시 git remote add ~ 하면 된다.
+          push할때 에러가 난다면? > readme file로 인한 문제일 수 있으니 push하기 전에 리파지토리의 내용을 먼저 내려받은 후 적용하고, 다시 push하면 된다.
+
 git push 할때마다 username과 password를 물어본다면?
-'git credential'로 세팅을 통해 다음부터 과정을 생략할 수 있다. 
+'git credential'로 세팅을 통해 다음부터 과정을 생략할 수 있다.
